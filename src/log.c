@@ -44,7 +44,7 @@ Log_Status LOG_PRINT(Log_Level logLevel, char *format, ...)
     if (logLevel < Log_ConfigData.LogLevelThreshold)
         return LOG_STATUS_LEVEL_UNDER_THRESHOLD;
 
-    static char printMsg[50];
+    static char printMsg[LOG_MSG_MAX_SIZE];
     memset(printMsg, 0, sizeof(printMsg));
 
     uint8_t writeIndex = snprintf(printMsg, sizeof(printMsg), "[ %s ] ", LOG_LEVEL_TO_STRING(logLevel));
