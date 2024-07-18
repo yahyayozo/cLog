@@ -47,7 +47,7 @@ Log_Status LOG_PRINT(Log_Level logLevel, char *format, ...)
     static char printMsg[LOG_MSG_MAX_SIZE];
     memset(printMsg, 0, sizeof(printMsg));
 
-    uint8_t writeIndex = snprintf(printMsg, sizeof(printMsg), "[ %s ] ", LOG_LEVEL_TO_STRING(logLevel));
+    uint8_t writeIndex = snprintf(printMsg, sizeof(printMsg), "[%s] ", LOG_LEVEL_TO_STRING(logLevel));
     va_list args;
     va_start(args, format);
     vsprintf(&printMsg[writeIndex], format, args);

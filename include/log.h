@@ -6,7 +6,7 @@
 #define ENABLE_LOGGING
 
 #define LOG_MSG_MAX_SIZE 50
-#define IS_LOG_LEVEL(x) (x > LOG_LEVEL_INFO && x < LOG_LEVEL_CRITICAL)
+#define IS_LOG_LEVEL(x) (x >= LOG_LEVEL_INFO && x <= LOG_LEVEL_CRITICAL)
 
 typedef void (*Log_PrintFunc)(char *data, uint32_t dataLength);
 
