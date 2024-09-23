@@ -29,7 +29,7 @@ The main components are:
 Include the `log.h` file in your project where you want to use the logging module:
 
 ```c
-#include "log.h"
+#include "cLog.h"
 ```
 
 ### 2. Initialize the logger
