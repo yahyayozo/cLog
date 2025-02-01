@@ -1,0 +1,33 @@
+
+#ifdef TEST
+
+#include "unity.h"
+
+#include "cLog.h"
+
+void setUp(void)
+{
+}
+
+void tearDown(void)
+{
+}
+
+void test_cLog_Init(void)
+{
+    TEST_ASSERT_EQUAL(LOG_STATUS_OK,LOG_INIT(NULL,LOG_LEVEL_CRITICAL));
+}
+
+void test_cLog_InitWithWrongThreshold(void)
+{
+    TEST_ASSERT_EQUAL(LOG_STATUS_INCORRECT_LEVEL,LOG_INIT(NULL,10));
+}
+
+void test_cLog_LogLevelToString(void){
+    TEST_ASSERT_EQUAL_STRING("INFO",LOG_LEVEL_TO_STRING(LOG_LEVEL_INFO));
+    TEST_ASSERT_EQUAL_STRING("CRITICAL",LOG_LEVEL_TO_STRING(LOG_LEVEL_CRITICAL));
+    TEST_ASSERT_EQUAL_STRING("WARNING",LOG_LEVEL_TO_STRING(LOG_LEVEL_WARNING));
+    TEST_ASSERT_EQUAL_STRING("ERROR",LOG_LEVEL_TO_STRING(LOG_LEVEL_ERROR));
+}
+
+#endif // TEST
